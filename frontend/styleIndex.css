@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FF8700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    color: #333;
+    padding-bottom: 50px;
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px 20px; 
+    background-color: #172CAF;
+    color: white;
+}
+
+header h2 {
+    font-weight: normal;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #85c1e9;
+}
+
+nav {
+    background-color: #122185;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #E6399B;
+}
+
+main {
+    text-align: center;
+    padding: 0 15px;
+}
+
+section p {
+    max-width: 800px;
+    margin: 15px auto 30px;
+    font-size: 1.1rem;
+    color: #fff; 
+}
+
+section h2 {
+    color: #172CAF;
+    font-size: 2rem;
+}
+
+.user-status {
+    background-color: #fff;
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-weight: bold;
+}
+.user-status button {
+    margin-top: 10px;
+    padding: 6px 12px;
+    background: #E6399B;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.card {
+    display: inline-block;
+    width: 300px; 
+    background-color: #37DB79;
+    padding: 20px;
+    border: 2px solid #bdc3c7;
+    border-radius: 12px;
+    margin: 15px;
+    text-align: left;
+    vertical-align: top;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    color: #222;
+    min-height: 60px; 
+}
+
+.card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: #ccc;
+}
+
+.info ul {
+    list-style-type: square;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+    color: #222;
+}
+
+.info li {
+    margin-bottom: 5px;
+}
+
+.card a {
+    display: block;
+    text-align: center;
+    text-decoration: none; 
+    background-color: #E6399B; 
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.card a:hover {
+    background-color: #85004B;
+}
+
+.card-premium {
+    background-color: pink;
+    border-color: #000000;
+    box-shadow: 0 6px 15px rgba(243, 156, 18, 0.4);
+}
+
+.card-premium a {
+    background-color: #33CCCC;
+}
+
+.card-premium a:hover {
+    background-color: #006363;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #172CAF;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

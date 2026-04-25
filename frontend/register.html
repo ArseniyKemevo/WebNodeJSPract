@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Регистрация</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Регистрация</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Главная</a>
+    <a href="locations.html">Локации</a>
+    <a href="excursions.html">Экскурсии</a>
+    <a href="login.html">Авторизация</a>
+  </nav>
+
+  <div class="container">
+    <form onsubmit="registerUser(event)">
+      <input type="text" id="full_name" placeholder="ФИО" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="text" id="login" placeholder="Логин" required />
+      <input type="password" id="password" placeholder="Пароль" required />
+      
+      <select id="role" required>
+        <option value="user">Пользователь (Турист)</option>
+        <option value="guide">Гид</option>
+        <option value="admin">Администратор</option>
+      </select>
+      
+      <button type="submit">Зарегистрироваться</button>
+    </form>
+    
+    <div id="message" class="message"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
