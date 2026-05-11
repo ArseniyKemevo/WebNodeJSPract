@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ-панель - Экскурсии</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="kanban.css"> </head>
+<body>
+    <header>
+        <h1>Админ-панель</h1>
+        <h2>Планирование и управление экскурсиями</h2>
+    </header>
+
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="locations.html">Локации</a>
+        <a href="excursions.html">Экскурсии</a>
+        <a href="users.html">Пользователи</a>
+        <a href="admin.html" style="background: rgba(255,255,255,0.25);">Админ-панель</a>
+        <a href="register.html">Регистрация</a>
+        <a href="login.html">Авторизация</a>
+    </nav>
+
+    <div class="container kanban-container">
+        <div id="user-info"></div>
+
+        <div id="notification-area"></div>
+
+        <section class="controls-kanban">
+            <form id="add-task-form">
+                <input type="text" id="task-input" placeholder="Название экскурсии (напр. Центр, 15:00)" required>
+                <select id="task-priority">
+                    <option value="low">Обычная</option>
+                    <option value="medium">Важная</option>
+                    <option value="high">VIP / Срочная</option>
+                </select>
+                <button type="submit">Добавить</button>
+            </form>
+
+            <div class="filters-kanban">
+                <select id="filter-priority">
+                    <option value="all">Все экскурсии</option>
+                    <option value="high">Только VIP</option>
+                    <option value="medium">Только Важные</option>
+                    <option value="low">Только Обычные</option>
+                </select>
+                <div class="counter">Всего: <span id="total-tasks">0</span></div>
+            </div>
+        </section>
+
+        <main class="board">
+            <div class="column">
+                <h3>Заявки (<span id="count-todo">0</span>)</h3>
+                <div class="task-list" id="todo"></div>
+            </div>
+            <div class="column">
+                <h3>Подготовка (<span id="count-in-progress">0</span>)</h3>
+                <div class="task-list" id="in-progress"></div>
+            </div>
+            <div class="column">
+                <h3>В процессе (<span id="count-review">0</span>)</h3>
+                <div class="task-list" id="review"></div>
+            </div>
+            <div class="column">
+                <h3>Завершены (<span id="count-done">0</span>)</h3>
+                <div class="task-list" id="done"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="kanban.js"></script>
+</body>
+</html>
