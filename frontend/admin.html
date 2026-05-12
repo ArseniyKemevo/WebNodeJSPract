@@ -3,70 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Админ-панель - Экскурсии</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="kanban.css"> </head>
+    <title>Админка - Планирование</title>
+    <link rel="stylesheet" href="style.css"> <link rel="stylesheet" href="kanban.css"> </head>
 <body>
     <header>
-        <h1>Админ-панель</h1>
-        <h2>Планирование и управление экскурсиями</h2>
+        <h1>Панель администратора</h1>
+        <p>Простой инструмент для управления экскурсиями</p>
     </header>
 
     <nav>
         <a href="index.html">Главная</a>
         <a href="locations.html">Локации</a>
         <a href="excursions.html">Экскурсии</a>
-        <a href="users.html">Пользователи</a>
-        <a href="admin.html" style="background: rgba(255,255,255,0.25);">Админ-панель</a>
-        <a href="register.html">Регистрация</a>
-        <a href="login.html">Авторизация</a>
+        <a href="admin.html" style="border-bottom: 2px solid white;">Канбан-доска</a>
+        <a href="login.html">Выход</a>
     </nav>
 
-    <div class="container kanban-container">
-        <div id="user-info"></div>
+    <div class="container">
+        <div id="msg-box"></div>
 
-        <div id="notification-area"></div>
-
-        <section class="controls-kanban">
-            <form id="add-task-form">
-                <input type="text" id="task-input" placeholder="Название экскурсии (напр. Центр, 15:00)" required>
-                <select id="task-priority">
-                    <option value="low">Обычная</option>
-                    <option value="medium">Важная</option>
-                    <option value="high">VIP / Срочная</option>
-                </select>
-                <button type="submit">Добавить</button>
-            </form>
-
-            <div class="filters-kanban">
-                <select id="filter-priority">
-                    <option value="all">Все экскурсии</option>
-                    <option value="high">Только VIP</option>
-                    <option value="medium">Только Важные</option>
-                    <option value="low">Только Обычные</option>
-                </select>
-                <div class="counter">Всего: <span id="total-tasks">0</span></div>
-            </div>
+        <section class="add-task-section">
+            <input type="text" id="task-text" placeholder="Название новой задачи...">
+            <select id="task-lvl">
+                <option value="low">Низкий приоритет</option>
+                <option value="medium">Средний</option>
+                <option value="high">Высокий</option>
+            </select>
+            <button id="add-btn">Добавить задачу</button>
         </section>
 
-        <main class="board">
-            <div class="column">
-                <h3>Заявки (<span id="count-todo">0</span>)</h3>
-                <div class="task-list" id="todo"></div>
+        <div class="board-info">
+            <span>Всего задач: <b id="total-val">0</b></span>
+            <select id="filter-lvl">
+                <option value="all">Показать все</option>
+                <option value="high">Только важные</option>
+                <option value="medium">Средние</option>
+                <option value="low">Низкие</option>
+            </select>
+        </div>
+
+        <div class="kanban-board">
+            <div class="kanban-col" id="col-todo">
+                <div class="col-title">Нужно сделать (<span id="num-todo">0</span>)</div>
+                <div class="list" id="todo"></div>
             </div>
-            <div class="column">
-                <h3>Подготовка (<span id="count-in-progress">0</span>)</h3>
-                <div class="task-list" id="in-progress"></div>
+            <div class="kanban-col" id="col-work">
+                <div class="col-title">В работе (<span id="num-work">0</span>)</div>
+                <div class="list" id="in-progress"></div>
             </div>
-            <div class="column">
-                <h3>В процессе (<span id="count-review">0</span>)</h3>
-                <div class="task-list" id="review"></div>
+            <div class="kanban-col" id="col-test">
+                <div class="col-title">Проверка (<span id="num-test">0</span>)</div>
+                <div class="list" id="review"></div>
             </div>
-            <div class="column">
-                <h3>Завершены (<span id="count-done">0</span>)</h3>
-                <div class="task-list" id="done"></div>
+            <div class="kanban-col" id="col-done">
+                <div class="col-title">Готово (<span id="num-done">0</span>)</div>
+                <div class="list" id="done"></div>
             </div>
-        </main>
+        </div>
     </div>
 
     <script src="app.js"></script>
